@@ -1,11 +1,8 @@
-// document.body.innerHTML = `<h1>${d3.version}</h1>`;
-var linearScale = d3.scaleLinear()
-	.domain([0,100])
-	.range([0,1])
-	.clamp(true);
+var timeScale = d3.scaleTime()
+	.domain([new Date (2016,0,1), new Date()])
+	.range ([0,100]);
 
-	console.log(linearScale(-20));
-	console.log(linearScale(50));
-	console.log(linearScale(120));
+	console.log(timeScale(new Date(2016, 9, 10)));
+	console.log(timeScale(new Date(2016, 7, 29)));
 
-	console.log(linearScale.invert(.5));
+	console.log(timeScale.invert(50));
